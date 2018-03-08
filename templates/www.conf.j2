@@ -11,7 +11,9 @@ pm.min_spare_servers = {{ php_fpm_pm_min_spare_servers }}
 pm.max_spare_servers = {{ php_fpm_pm_max_spare_servers }}
 pm.max_requests = {{ php_fpm_pm_max_requests }}
 
-{% if slowlog is defined %} slowlog = /var/log/php-fpm/www-slow.log {% endif %}
+{% if slowlog is defined %}
+slowlog = /var/log/php-fpm/www-slow.log
+{% endif %}
 {% if php_admin_value is defined %}
 {% for value in php_admin_value %}
 php_admin_value[{{ value }}] = "{{ php_admin_value[value] }}"
